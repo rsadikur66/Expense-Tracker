@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Expense_Tracker.Models.Expence>
+
+<h3 class="text-center text-info font-weight-bold">Expense Tracker</h3>
+<p>
+    <a class="float-right" asp-action="Create">Add New</a>
+</p>
+<p>
+    @using (Html.BeginForm("Index", "Expenses", FormMethod.Post))
+    {
+        <label>From</label> <input type="date" name="startDate" />
+        <label>To</label> <input type="date" name="endDate" />
+        <input type="submit" value="Submit" class="btn btn-secondary" />
+        <a asp-page="/Index">Get All</a>
+
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Expense Category</th>
+                    <th>Date of the Expense</th>
+                    <th>Expense Amount.</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(x => item.CategoryName)</td>
+                        @*<td hidden>@Html.DisplayFor(x => item.Id)</td>*@
+                        <td>@Html.DisplayFor(x => item.ExpenseDate)</td>
+                        <td>@Html.DisplayFor(x => item.Amount)</td>
+                        @*<td>@Html.DisplayFor(x => item.CategoryId)</td>*@
+
+                        <td>
+                            @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a>*@
+                            @Html.ActionLink("Edit", "Create", new { item.Id }, new { @class = "btn btn-success" })|
+                            @*<a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |*@
+                            @*<a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>*@
+                            @Html.ActionLink("Delete", "Delete", new { item.Id }, new { @class = "btn btn-danger", onclick = "return confirm ('Do you really want to delete this record?')" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</p>
+
+
