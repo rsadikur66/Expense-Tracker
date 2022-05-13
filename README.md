@@ -1,7 +1,7 @@
 
 # Expense Tracker
 
-Expense Tracker application can record daily expenditure in different categories.
+Expense Tracker application can record daily expenditure with different categories.
 
 # How to Run application after clone the project from Github.
 
