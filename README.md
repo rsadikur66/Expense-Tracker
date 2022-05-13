@@ -23,8 +23,8 @@ update-database
 
 1. After run the application Home page **Expense Trcker** will be shown to the user .
 ### Add Category : 
-2. Before create Expense record **First create Expense Categories** and user can go to **Expense Category** page from top navigation menu.
-3. Click on Create Button for Add new category. After create a new category user navigate to the Expense category Index page.
+2. Before create Expense record **First create Expense Categories** and user can go to **Category Setup** page from top navigation menu.
+3. Click on **Create New** Button  for Add new category. After create a new category user navigate to the Expense category Index page.
 ### Edit Category :
 4. Edit action is shown at right of the record . By clicking on Edit action user navigate to the Edit page.
 5. After Edit Category user Click on Save button for Save the Record and navigate to the index page.
